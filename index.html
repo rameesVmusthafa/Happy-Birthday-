@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#160912">
+<title>For Shaza ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #10070d;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.screen {
+    min-height: 100vh;
+    min-height: 100svh;
+    width: 100%;
+    display: none;
+    position: relative;
+    overflow: hidden;
+    padding: 30px 20px;
+}
+
+.screen.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: screenIn 1s ease;
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: scale(1.02);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 80, 130, 0.12), transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(255, 180, 200, 0.08), transparent 30%),
+        linear-gradient(145deg, #10070d, #24101b, #0e060c);
+    z-index: 0;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,.8) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,200,220,.5) 1px, transparent 1px);
+    background-size: 90px 90px, 140px 140px;
+    animation: starsMove 18s linear infinite;
+    opacity: .35;
+}
+
+@keyframes starsMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-90px); }
+}
+
+/* =========================
+   HEARTS
+========================= */
+
+.hearts {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    font-size: 20px;
+    opacity: .7;
+    animation: floatHeart linear infinite;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .7;
+    }
+    85% {
+        opacity: .5;
+    }
+    100% {
+        transform: translateY(-115vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+}
+
+.script {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.small-text {
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: .7;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 12vw, 100px);
+    line-height: .95;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 8vw, 70px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(255,255,255,.82);
+}
+
+.name {
+    color: #ff9fbd;
+    text-shadow: 0 0 25px rgba(255,100,150,.5);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.08);
+    color: white;
+    padding: 15px 27px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: .3s;
+    backdrop-filter: blur(10px);
+    margin-top: 30px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background: rgba(255,120,160,.18);
+    border-color: rgba(255,160,190,.6);
+}
+
+.btn-main {
+    background: linear-gradient(135deg, #c94f78, #8d3155);
+    border: none;
+    box-shadow: 0 10px 35px rgba(190,50,100,.25);
+}
+
+/* =========================
+   OPENING
+========================= */
+
+.gift {
+    width: 120px;
+    height: 100px;
+    margin: 0 auto 35px;
+    position: relative;
+    animation: giftFloat 3s ease-in-out infinite;
+}
+
+.gift-box {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 100px;
+    height: 75px;
+    border-radius: 5px;
+    background: linear-gradient(135deg,#c94f78,#7e2949);
+    box-shadow: 0 15px 45px rgba(200,60,110,.25);
+}
+
+.gift-box::after {
+    content: "";
+    position: absolute;
+    left: 43px;
+    top: 0;
+    width: 14px;
+    height: 75px;
+    background: #f0b0c5;
+}
+
+.gift-lid {
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    width: 114px;
+    height: 20px;
+    border-radius: 4px;
+    background: #e2769b;
+}
+
+@keyframes giftFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* =========================
+   SPECIAL CARDS
+========================= */
+
+.reason-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.reason {
+    padding: 25px 15px;
+    border-radius: 20px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    backdrop-filter: blur(8px);
+    transition: .4s;
+}
+
+.reason:hover {
+    transform: translateY(-7px);
+    background: rgba(255,100,150,.1);
+}
+
+.reason-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.reason p {
+    font-size: 13px;
+}
+
+/* =========================
+   DATES
+========================= */
+
+.date-counter {
+    color: #ff9fbd;
+    letter-spacing: 3px;
+    font-size: 12px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.date-card {
+    max-width: 600px;
+    margin: auto;
+    padding: 15px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.1);
+    backdrop-filter: blur(10px);
+}
+
+.date-photo {
+    width: 100%;
+    height: min(55vh, 500px);
+    object-fit: cover;
+    border-radius: 18px;
+    display: block;
+    background: #24101b;
+}
+
+.date-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 35px;
+    margin-top: 22px;
+    margin-bottom: 8px;
+}
+
+.date-memory {
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: .8;
+    padding: 0 10px;
+}
+
+.date-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.envelope {
+    width: 180px;
+    height: 120px;
+    margin: 20px auto 25px;
+    position: relative;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+.envelope-body {
+    position: absolute;
+    inset: 0;
+    background: #f0d8df;
+    border-radius: 5px;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 90px solid transparent;
+    border-right: 90px solid transparent;
+    border-top: 65px solid #d69bad;
+    transform-origin: top;
+    transition: transform .8s;
+    z-index: 3;
+}
+
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.letter {
+    display: none;
+    max-width: 650px;
+    margin: 30px auto 0;
+    padding: 30px 25px;
+    text-align: left;
+    border-radius: 20px;
+    background: rgba(255,245,248,.96);
+    color: #30141f;
+    animation: letterIn 1s ease;
+}
+
+.letter.show {
+    display: block;
+}
+
+.letter p {
+    color: #4a2835;
+    margin-bottom: 15px;
+}
+
+@keyframes letterIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   CHOOSE YOU
+========================= */
+
+.choose-line {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 7vw, 55px);
+    line-height: 1.35;
+    margin: 30px auto;
+    max-width: 700px;
+}
+
+.pulse-heart {
+    font-size: 60px;
+    animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.12); }
+}
+
+/* =========================
+   QUESTION GAME
+========================= */
+
+.question {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 9vw, 75px);
+    margin-bottom: 35px;
+}
+
+.game-area {
+    position: relative;
+    width: min(600px, 100%);
+    height: 220px;
+    margin: auto;
+}
+
+.game-btn {
+    position: absolute;
+    padding: 16px 30px;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.yes-btn {
+    left: 50%;
+    transform: translateX(-115%);
+    background: #d6537e;
+    color: white;
+    box-shadow: 0 10px 30px rgba(200,60,110,.3);
+}
+
+.no-btn {
+    left: 50%;
+    transform: translateX(15%);
+    background: rgba(255,255,255,.12);
+    color: white;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final-message {
+    max-width: 700px;
+    margin: auto;
+}
+
+.final-message p {
+    font-size: 16px;
+}
+
+.final-love {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(35px, 8vw, 65px);
+    line-height: 1.15;
+    margin: 35px 0;
+    color: #ffabc5;
+    text-shadow: 0 0 25px rgba(255,100,150,.3);
+}
+
+.forever {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 6vw, 48px);
+    line-height: 1.3;
+    margin: 30px 0;
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 14px;
+    top: -20px;
+    z-index: 100;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 650px) {
+
+    .screen {
+        padding: 25px 16px;
+    }
+
+    .reason-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .reason {
+        padding: 20px;
+    }
+
+    .date-photo {
+        height: 48vh;
+    }
+
+    .game-area {
+        height: 260px;
+    }
+
+    .yes-btn {
+        left: 50%;
+        top: 40px;
+        transform: translateX(-50%);
+    }
+
+    .no-btn {
+        left: 50%;
+        top: 130px;
+        transform: translateX(-50%);
+    }
+
+    .letter {
+        padding: 25px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     SCREEN 1 — OPENING
+========================= -->
+
+<section class="screen active" id="screen1">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+        <div class="gift">
+            <div class="gift-lid"></div>
+            <div class="gift-box"></div>
+        </div>
+
+        <div class="small-text">A little surprise for you</div>
+
+        <h1 class="name">Shaza ❤️</h1>
+
+        <p>
+            I made something special for you.<br>
+            Take a little journey with me...
+        </p>
+
+        <button class="btn btn-main" onclick="nextScreen(2)">
+            ✨ Open Your Surprise
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 2 — BIRTHDAY
+========================= -->
+
+<section class="screen" id="screen2">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+        <div class="small-text">Today is your day</div>
+
+        <h1>
+            Happy Birthday,<br>
+            <span class="name">My Love ❤️</span>
+        </h1>
+
+        <p>
+            Today isn't just another day.<br><br>
+
+            Your first birthday as my forever person. ❤️
+        </p>
+
+        <button class="btn btn-main" onclick="nextScreen(3)">
+            💌 Keep Going
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 3 — WHY SPECIAL
+========================= -->
+
+<section class="screen" id="screen3">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+        <div class="small-text">For you, Shaza</div>
+
+        <h2>
+            This Day Is Special<br>
+            Because...
+        </h2>
+
+        <div class="reason-grid">
+
+            <div class="reason">
+                <div class="reason-icon">✨</div>
+                <p>
+                    Even the smallest things you do make me realise how much I mean to you
+                </p>
+            </div>
+
+            <div class="reason">
+                <div class="reason-icon">🌸</div>
+                <p>
+                    Without even realising it, you became such an important part of my life.
+                </p>
+            </div>
+
+            <div class="reason">
+                <div class="reason-icon">❤️</div>
+                <p>
+                    And most importantly...
+                    I'm really lucky to have you.
+                </p>
+            </div>
+
+        </div>
+
+        <p style="margin-top:35px;">
+            But our story isn't just about words...
+        </p>
+
+        <button class="btn btn-main" onclick="nextScreen(4)">
+            📖 Remember With Me
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 4 — SEVEN DATES
+========================= -->
+
+<section class="screen" id="screen4">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+        <div class="small-text">Our memories</div>
+
+        <h2>
+            Seven Dates.<br>
+            Seven Memories. ❤️
+        </h2>
+
+        <p style="margin-bottom:25px;">
+            Seven little moments that I'll always remember.
+        </p>
+
+        <div class="date-counter" id="dateCounter">
+            Date 01 of 07
+        </div>
+
+        <div class="date-card">
+
+            <!--
+                ==================================================
+                PHOTO 1
+                CHANGE photos/date1.jpg TO YOUR FIRST PHOTO
+                ==================================================
+            -->
+
+            <img
+                id="datePhoto"
+                class="date-photo"
+                src="photos/date1.jpg"
+                alt="Our memory"
+            >
+
+            <div class="date-title" id="dateTitle">
+                Our First Date ❤️
+            </div>
+
+            <div class="date-memory" id="dateMemory">
+                A memory I'll always keep close to my heart.
+            </div>
+
+            <div class="date-buttons">
+
+                <button
+                    class="btn"
+                    id="prevDate"
+                    onclick="previousDate()">
+                    ← Previous
+                </button>
+
+                <button
+                    class="btn btn-main"
+                    id="nextDate"
+                    onclick="nextDate()">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+        <button
+            class="btn btn-main"
+            id="afterDates"
+            onclick="nextScreen(5)"
+            style="display:none;">
+            💌 There's Something Else...
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 5 — LETTER
+========================= -->
+
+<section class="screen" id="screen5">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+        <div class="small-text">Just for you</div>
+
+        <h2>
+            Shaza, I wrote this<br>
+            for you... ❤️
+        </h2>
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openLetter()">
+
+            <div class="envelope-body"></div>
+            <div class="envelope-flap"></div>
+
+        </div>
+
+        <p id="letterHint">
+            Tap the letter to open it
+        </p>
+
+        <div class="letter" id="letter">
+
+            <p>Dear Shaza,</p>
+
+            <p>
+                Today is your day, and while I could simply
+                say "Happy Birthday", I wanted to make
+                something that would stay with you
+                a little longer.
+            </p>
+
+            <p>
+                Every moment, every conversation, every
+                little memory we've made has a special
+                place in my heart.
+            </p>
+
+            <p>
+                I don't know what the future has in store
+                for us, but I know one thing...
+                I'm grateful that you're a part of my life.
+            </p>
+
+            <p>
+                You are someone I want to keep choosing,
+                again and again.
+            </p>
+
+            <p>
+                Happy Birthday, my love. ❤️
+            </p>
+
+        </div>
+
+        <button
+            class="btn btn-main"
+            onclick="nextScreen(6)">
+            ❤️ One More Thing
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 6 — I CHOOSE YOU
+========================= -->
+
+<section class="screen" id="screen6">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+
+        <h2 class="name">I Really Really love You daa </h2>
+	<span class="pulse-heart">❤️</span>
+
+        <div class="choose-line">
+
+            I choose you today, tomorrow <br>            
+
+            <strong>and forever!!!.</strong>
+
+        </div>
+
+        <button class="btn btn-main" onclick="nextScreen(7)">
+            😏 One Last Question...
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 7 — WILL YOU BE MINE?
+========================= -->
+
+<section class="screen" id="screen7">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+        <div class="small-text">Okay Shaza...</div>
+
+        <div class="question">
+            Will you be mine? ❤️
+        </div>
+
+        <p>
+            Choose wisely... 😌
+        </p>
+
+        <div class="game-area">
+
+            <button
+                class="game-btn yes-btn"
+                id="yesButton"
+                onclick="sayYes()">
+                YES ❤️
+            </button>
+
+            <button
+                class="game-btn no-btn"
+                id="noButton"
+                onmouseenter="moveNoButton()"
+                ontouchstart="moveNoButton()">
+                NO 🙃
+            </button>
+
+        </div>
+
+        <p id="noMessage" style="margin-top:10px;"></p>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 8 — AFTER YES
+========================= -->
+
+<section class="screen" id="screen8">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content">
+
+        <div class="pulse-heart">💖</div>
+
+        <div class="small-text">I knew it!</div>
+
+        <h1>
+            You just made<br>
+            me the happiest. ❤️
+        </h1>
+
+        <p>
+            And now there's just one last thing
+            I want you to remember.
+        </p>
+
+        <button
+            class="btn btn-main"
+            onclick="nextScreen(9)">
+            🌌 Before You Go...
+        </button>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     SCREEN 9 — FINAL
+========================= -->
+
+<section class="screen" id="screen9">
+    <div class="bg"></div>
+    <div class="stars"></div>
+    <div class="hearts"></div>
+
+    <div class="content final-message">
+
+        <div class="small-text">
+            Before you leave, Shaza...
+        </div>
+
+        <h2>
+            If you ever have a bad day...
+        </h2>
+
+        <p>
+            If you're feeling sad,<br>
+            or if the world feels a little too heavy...
+        </p>
+
+        <div class="forever">
+            <strong>Come back here. ❤️</strong>
+        </div>
+
+        <div class="forever">
+           once again...
+        </div>
+
+        <div class="final-love">
+            I really, really love you,<br>
+            my Rooh Hayati. ❤️
+        </div>
+
+	<div class="forever">
+           Nammal angana oke aahnoda.....
+        </div>
+
+        <p>
+            Happy Birthday, Shaza. 🌹
+        </p>
+
+        <p style="margin-top:25px; font-size:11px; opacity:.45;">
+            This little place will always be yours.
+        </p>
+
+    </div>
+</section>
+
+
+<script>
+
+/* =========================================
+   SCREEN NAVIGATION
+========================================= */
+
+function nextScreen(number) {
+
+    document.querySelectorAll('.screen').forEach(screen => {
+        screen.classList.remove('active');
+    });
+
+    const next = document.getElementById('screen' + number);
+
+    if (next) {
+        next.classList.add('active');
+        window.scrollTo(0, 0);
+    }
+}
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+function createHearts() {
+
+    document.querySelectorAll('.hearts').forEach(container => {
+
+        for (let i = 0; i < 12; i++) {
+
+            const heart = document.createElement('div');
+
+            heart.className = 'heart';
+
+            const hearts = ['❤️','♡','💕','💗','✨'];
+
+            heart.innerHTML =
+                hearts[Math.floor(Math.random() * hearts.length)];
+
+            heart.style.left = Math.random() * 100 + '%';
+
+            heart.style.animationDuration =
+                (7 + Math.random() * 8) + 's';
+
+            heart.style.animationDelay =
+                Math.random() * 8 + 's';
+
+            heart.style.fontSize =
+                (12 + Math.random() * 16) + 'px';
+
+            container.appendChild(heart);
+        }
+
+    });
+}
+
+createHearts();
+
+
+/* =========================================
+   SEVEN DATE MEMORIES
+========================================= */
+
+/*
+==========================================================
+EDIT YOUR SEVEN DATE MEMORIES HERE
+==========================================================
+
+For each date:
+
+photo:
+    Put your photo inside the "photos" folder.
+
+title:
+    Change the title.
+
+memory:
+    Write what you remember about that date.
+
+==========================================================
+*/
+
+const dates = [
+
+    {
+        photo: "photos/date1.jpg",
+        title: "Our First Date ❤️",
+        memory: "A memory I'll always keep close to my heart."
+    },
+
+    {
+        photo: "photos/date2.jpg",
+        title: "Date Two 🌸",
+        memory: "Another beautiful day that became a beautiful memory."
+    },
+
+    {
+        photo: "photos/date3.jpg",
+        title: "Date Three ✨",
+        memory: "One more moment that I'll never forget."
+    },
+
+    {
+        photo: "photos/date4.jpg",
+        title: "Date Four 💕",
+        memory: "Some moments are simple, but somehow they become unforgettable."
+    },
+
+    {
+        photo: "photos/date5.jpg",
+        title: "Date Five 🌹",
+        memory: "A day that I would happily live through again."
+    },
+
+    {
+        photo: "photos/date6.jpg",
+        title: "Date Six ❤️",
+        memory: "Another chapter in our little story."
+    },
+
+    {
+        photo: "photos/date7.jpg",
+        title: "Date Seven 💖",
+        memory: "Seven dates, seven memories, and hopefully countless more."
+    }
+
+];
+
+let currentDate = 0;
+
+
+/* SHOW DATE */
+
+function showDate(index) {
+
+    currentDate = index;
+
+    const photo = document.getElementById('datePhoto');
+    const title = document.getElementById('dateTitle');
+    const memory = document.getElementById('dateMemory');
+    const counter = document.getElementById('dateCounter');
+
+    photo.style.opacity = 0;
+
+    setTimeout(() => {
+
+        photo.src = dates[index].photo;
+        title.innerHTML = dates[index].title;
+        memory.innerHTML = dates[index].memory;
+
+        counter.innerHTML =
+            `Date ${String(index + 1).padStart(2,'0')} of 07`;
+
+        photo.style.opacity = 1;
+
+    }, 200);
+
+    const previousButton =
+        document.getElementById('prevDate');
+
+    const nextButton =
+        document.getElementById('nextDate');
+
+    const afterButton =
+        document.getElementById('afterDates');
+
+    if (index === 0) {
+        previousButton.style.display = 'none';
+    } else {
+        previousButton.style.display = 'inline-block';
+    }
+
+    if (index === dates.length - 1) {
+
+        nextButton.style.display = 'none';
+        afterButton.style.display = 'inline-block';
+
+    } else {
+
+        nextButton.style.display = 'inline-block';
+        afterButton.style.display = 'none';
+
+    }
+}
+
+
+/* NEXT DATE */
+
+function nextDate() {
+
+    if (currentDate < dates.length - 1) {
+        showDate(currentDate + 1);
+    }
+
+}
+
+
+/* PREVIOUS DATE */
+
+function previousDate() {
+
+    if (currentDate > 0) {
+        showDate(currentDate - 1);
+    }
+
+}
+
+showDate(0);
+
+
+/* =========================================
+   LETTER
+========================================= */
+
+function openLetter() {
+
+    const envelope =
+        document.getElementById('envelope');
+
+    const letter =
+        document.getElementById('letter');
+
+    const hint =
+        document.getElementById('letterHint');
+
+    envelope.classList.add('open');
+
+    setTimeout(() => {
+
+        letter.classList.add('show');
+
+        hint.style.display = 'none';
+
+    }, 500);
+
+}
+
+
+/* =========================================
+   NO BUTTON GAME
+========================================= */
+
+let noAttempts = 0;
+
+function moveNoButton() {
+
+    const button =
+        document.getElementById('noButton');
+
+    const message =
+        document.getElementById('noMessage');
+
+    noAttempts++;
+
+    const messages = [
+        "Nope 😂",
+        "Nice try 😌",
+        "You can't catch me! 😂",
+        "Are you sure? 👀",
+        "Shaza... really? 🥺",
+        "The NO button says NO to being clicked 😂",
+        "Okay, I give up... just click YES ❤️"
+    ];
+
+    message.innerHTML =
+        messages[Math.min(noAttempts - 1, messages.length - 1)];
+
+    const area =
+        document.querySelector('.game-area');
+
+    const maxX =
+        area.clientWidth - button.offsetWidth;
+
+    const maxY =
+        area.clientHeight - button.offsetHeight;
+
+    const x =
+        Math.max(0, Math.random() * maxX);
+
+    const y =
+        Math.max(0, Math.random() * maxY);
+
+    button.style.left = x + 'px';
+    button.style.top = y + 'px';
+    button.style.transform = 'none';
+}
+
+
+/* =========================================
+   YES BUTTON
+========================================= */
+
+function sayYes() {
+
+    createConfetti();
+
+    nextScreen(8);
+
+}
+
+
+/* =========================================
+   CONFETTI
+========================================= */
+
+function createConfetti() {
+
+    const symbols = ['❤️','💕','✨','🎉','💖','🌸'];
+
+    for (let i = 0; i < 80; i++) {
+
+        const piece =
+            document.createElement('div');
+
+        piece.className = 'confetti';
+
+        piece.innerHTML =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        piece.style.left =
+            Math.random() * 100 + 'vw';
+
+        piece.style.animationDuration =
+            (2 + Math.random() * 3) + 's';
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + 's';
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+            piece.remove();
+        }, 6000);
+    }
+}
+
+</script>
+
+</body>
+</html>
